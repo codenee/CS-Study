@@ -29,6 +29,8 @@
 - MVC 패턴이란 무엇인가?
 - Git 과 GitHub 에 대해서
 
+## :cloud: 운영체제 [Link]()
+
 </br>
 
 
@@ -43,6 +45,7 @@
 ## :zap: Back-End [Link]()
 ## :zap: Windows [Link](https://github.com/codenee/CS-Study/tree/main/Windows)
 - Windows Kernel
+- 계정과 권한
 
 </br>
 
