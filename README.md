@@ -47,6 +47,7 @@
 - Windows Kernel
 - 계정과 권한
 ## :zap: Security [Link](https://github.com/codenee/CS-Study/tree/main/Security)
+- 윈도우 인증
 - 버퍼 오버플로우
   - 스택 버퍼오버플로우
   - 힙 버퍼오버플로우
