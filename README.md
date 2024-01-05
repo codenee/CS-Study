@@ -12,7 +12,7 @@
   - [Java]()
 - [Part 3. 분야별 정리](#part-3-분야별)
   - [BackEnd]()
-  - [Windows]()
+  - [Windows](https://github.com/codenee/CS-Study/tree/main/Windows)
   - [Security]()
   - [Machine Learning]()
 
@@ -41,7 +41,8 @@
 # Part 3. 분야별
 
 ## :zap: Back-End [Link]()
-## :zap: Windows [Link]()
+## :zap: Windows [Link](https://github.com/codenee/CS-Study/tree/main/Windows)
+- Windows Kernel
 
 </br>
 
