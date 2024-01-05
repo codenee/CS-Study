@@ -21,5 +21,29 @@
 
 </br>
 
+
+# Part 1. 전산 기초
+
+## :bulb: 개발상식 [Link]()
+- RESTFul API 란?
+- MVC 패턴이란 무엇인가?
+- Git 과 GitHub 에 대해서
+
+</br>
+
+
+# Part 2. Language
+## :gem: C++ [Link]()
+## :gem: Java [Link]()
+
+</br>
+
+# Part 3. 분야별
+
+## :zap: Back-End [Link]()
+## :zap: Windows [Link]()
+
+</br>
+
 ## 참고 자료
 - [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/main)
