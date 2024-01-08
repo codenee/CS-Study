@@ -13,7 +13,7 @@
 - [Part 3. 분야별 정리](#part-3-분야별)
   - [BackEnd]()
   - [Windows](https://github.com/codenee/CS-Study/tree/main/Windows)
-  - [Security](https://github.com/codenee/CS-Study/tree/main/Windows)
+  - [Security](https://github.com/codenee/CS-Study/tree/main/Security)
   - [Machine Learning]()
 
 
