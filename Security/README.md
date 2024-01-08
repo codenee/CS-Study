@@ -2,6 +2,7 @@
 - [Part 3-3 Security](#part-3-3-Security)
     - [00. 암호학](#암호학)
       - [대칭키 공개키](#대칭키-공개키)
+      - [HTTPS 동작과정](#HTTPS-동작과정)
     - [01. 시스템 보안](#시스템-보안)
       - [윈도우](#Windows)
       - [버퍼 오버플로우](#Buffer-Overflow)
@@ -69,9 +70,29 @@
 
 [back](https://github.com/codenee/CS-Study)
 
+</br>
 
+## HTTPS 동작과정
+### 1. 비대칭키가 인터넷 환경에서 사용되는 기본 원리
+* PC와 Server사이에서 이루어지는 공개키 교환 과정은 아래와 같다.
+  
+| 순서  | PC  | Server |
+|---|---|---|
+| 1. 키 쌍 생성  | PC Pub, Pri Key  | S Pub, Pri key  |
+| 2. 공개키 교환 | S Pub key | PC Pub Key|
+| 3-1. PC에서 문서 전송| 서버의 S Pub Key로 암호화||
+| 3-2. Server에서 문서 받음|| 서버의 S Pri Key로 복호화|
+| 4-1. Server에서 문서 전송| | PC의 Pub Key로 암호화 |
+| 4-2. PC에서 문서 받음| PC의 Pri Key로 복호화 |  |
+
+* 실제로는 위와 같이 공개키만 사용해서 사용 하지 않는다.
+* Why ? Key 생성시 전산(CPU)작업을 너무 많이 사용한다.
+    * 교환 끝나면 key를 폐기 한다. (비효율)
+
+[Up](#part-3-3-Security)
 
 </br>
+
 
 ## 시스템 보안
 ### Windows
