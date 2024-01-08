@@ -50,6 +50,8 @@
 ## :zap: Security [Link](https://github.com/codenee/CS-Study/tree/main/Security)
 - 암호학
   - 대칭키 공개키
+  - HTTPS 동작 과정
+  - 해시 알고리즘
 - 윈도우 인증
 - 버퍼 오버플로우
   - 스택 버퍼오버플로우
