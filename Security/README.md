@@ -119,6 +119,48 @@
 
 </br>
 
+### 3. 중간자 공격 문제를 방지하기 위해 "인증 기관" 등장
+* 중간자 공격
+  * 서버와 PC 사이 중간에서 S pub key(서버의 Pub key)를 가로채서 H Pub key(Hacker의 Pub key)로 변경하여 PC와 교환한다.
+  * PC는 H Pub key를 서버의 공개키라고 인식하여 PC자신의 대칭키를 전달한다.
+  * Hacker는 PC의 대칭키를 얻게되어 중간에서 모든 정보를 암/복호화 할 수 있게 된다.
+
+ #### "인증 기관(제3기관)"
+* 서버의 공개키 생성하는 과정에서 인증 기관이 개입하여 신뢰할 수 있는 키임을 증명할 수 있게 된다.
+* Windows에 인증서를 설치한다.(CA와 제휴)
+  * 인증서를 검증하기 위한 인증서(CA Pub)를 설치
+  * S Pub 인증서의 암호화된 Hash(CA Pri로 암호화)를 CA Pub로 복호화해서 검증
+* "certmgrt.msc"에 인증서 정보 확인 가능하다.
+ 
+| 순서  | PC  | Server |
+|---|---|---|
+| 1-1. CA key |  | CA Pub(인증서), Pri key |
+| 1-2. RA | | RA Pub(인증서), pri key |
+| 1-3. 서버의 공개키 생성(RA에 요청) | | S Pub, Pri key |
+| 2. 공개 키 교환| S Pub key |  |
+| 3-1. 대칭키 암호화| PC Sym Key를 S pub key로 암호화||
+| 3-2. 대칭키 전달||암호화된 PC Sym Key를 S pri key로 복호화|
+| 4. 대칭키 교환 완료| | PC Sym Key |
+| 5-1. PC에서 문서 전달| S Sym key로 문서 암호화||
+| 5-2. 서버에서 문서 받음|| PC Sym key로 문서 복호화|
+
+* 순서 2번 이후 공개키로 대칭키를 암호화하여 교환하는 과정은 "HTTPS동작원리 2"와 동일합니다.
+
+* 1-3 순서의 자세한 설명
+  * CA는 최상위 인증 기관으로 CA Pub, Pri key가 있다.
+  * RA는 서버가 요청하면 공개키를 생성해 주는 곳이다.
+    * 서버 키 생성시 RA pub, pri key도 사용한다.
+    * RA Pub key(인증서)에는 A사의 정보, Date, Hash(암호화) 등의 정보가 들어있다.
+    * 이 때 Hash는 CA Pri key로 암호화되었다. (보통 pub-> 암호화, pri->복호화에 사용되는데 CA는 반대로 한다.)
+  1. 서버는 RA에게 공개키 생성을 요청한다.
+  2. RA는 RA의 인증서인 RA Pub key를 서버에게 전달한다.
+  3. 서버는 RA Pub key를 사용하여 서버의 S Pub, pri key를 생성한다.
+     * S pub key(인증서)에는 public key, (hash + 서명) 등의 정보가 들어 있다.
+
+[Up](#part-3-3-Security)
+
+</br>
+
 
 ## 해시 알고리즘
 ### 해시함수
