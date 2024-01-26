@@ -1,28 +1,29 @@
 # Part 1-1 Development
 - [Part 1-1 Development](#part-1-1-Development)
   - [REST API](#REST-API)
+  - [MVC 패턴](#MVC-Pattern)
 
    
 
-[back](https://github.com/codenee/CS-Study)
+[Up](#part-1-1-Development) / [back](https://github.com/codenee/CS-Study)
 
 </br>
 
-## 개발 상식
-### REST API
+# 개발 상식
+## REST API
 Representational State Transfer
 * 분산 네트워크 상에서 자원(리소스)을 표현하고 그 상태를 전송하는 아키텍처 스타일.
 * 서버 자원을 클라이언트에 구애받지 않고 사용할 수 있게 하는 설계 방식.
 * 클라이언트에서 정보를 요청하면 서버는 특정 기기에 종속되지 않고 모든 기기에 통용할 수 있는 JSON데이터를 응답으로 보냅니다.
 * 서버가 클라이언트의 요청에 체계적으로 대응할 수 있어서 서버 프로그램의 재사용과 확장성이 좋아집니다.
 
-#### REST
+### REST
 * HTTP URL로 서버의 자원을 명시하고, HTTP메서드(POST, GET, PATCH/PUT, DELETE)로 해당 자원에 대해 CRUD하는 것을 말합니다.
 
-#### API
+### API
 * 클라이언트가 서버의 자원을 요청할 수 있도록 서버에서 제공하는 인터페이스입니다.
 
-#### REST API 특징
+### REST API 특징
 * 자원(Resources)
   * REST에서는 모든 자원을 고유한 식별자(URI)를 통해 표현.
   * 웹의 자원은 각각의 URI로 식별되며(/users), 이러한 지원은 서버에 의해 관리됨.
@@ -45,7 +46,7 @@ Representational State Transfer
 
 </br>
 
-#### 자원 식별
+### 자원 식별
 * REST API의 좋은 예와 나쁜 예
 
 | API  | GOOD  | BAD  |
@@ -55,15 +56,15 @@ Representational State Transfer
 | 글 삭제  | DELETE /posts/{id}  |  DELETE /posts/delete/{id} |
 
 
-#### 데이터 표현
+### 데이터 표현
 * JSON데이터는 자바스크립트 방식을 차용한 객체 표현식으로, Key와 Value쌍으로 이루어진 속성(property)로 구성된다.
 * {"key" : "value"}
 
-#### 상태 전이
+### 상태 전이
 * REST API는 서버가 클라이언트의 상태를 저장하지 않습니다.
 * HTTP 메서드를 통해 클라이언트와 서버 간의 상태 전이를 일으켜 통신을 효과적으로 할 수 있도록 합니다.
 
-#### 인터페이스 일관성
+### 인터페이스 일관성
 * REST API는 일관된 인터페이스를 제공하기 위해 HTTP메서드와 URI를 일관성있게 사용한다.
 
 |Method|URI|
@@ -81,12 +82,41 @@ Representational State Transfer
 >>PATCH /posts/update/{postId} </br>
 >>이렇게 사용하면 안된다고 합니다.
 
+</br>
 
+[Up](#part-1-1-Development)
 
 </br>
 
+## MVC Pattern
+* 뷰 템플릿
+  * view template은 화면을 담당하는 기술로, 웹 페이지(view)를 하나의 틀(template)로 만들고 여기에 변수를 삽입해 서로 다른 페이지로 보여 줍니다.
+  * 이 기술로 사용자 마다 웹 페이지를 만드는 것이 아니라 한 페이지에 변수만 바꿔서 사용자마다 화면을 보여주게 됩니다.
+  * 생성 위치
+    * 뷰 템플릿은 src > main > resources > templates 디렉터리에 만듭니다.
+* MVC 패턴
+  * Model : 데이터 관리
+    * 애플리케이션이 포함해야 할 데이터가 무엇인지를 정의한다.
+    * 데이터의 상태가 변경되면 모델은 이를 뷰에게 알린다(컨트롤러에게 알리기도 한다)
+  * View : 화면
+    * 애플리케이션에서 실제로 보이는 부분을 말한다.
+    * 웹 브라우저에서 데이터를 보여주는 방식을 정의한 것
+    * view에서 데이터에 따라 동적으로 화면을 다르게 보여주는 것을 뷰 템플릿이라고 한다.
+    * 자바에서 사용하는 대표적인 템플릿 엔진으로 JSP, Thymleaf(타임리프), Mustache(머스테치) 등이 있다.
+  * Controller : 클라이언트의 요청에 따라 서버에서 이를 처리하는 역할
+    * 사용자의 액션에 응답하는 컴포넌트
+    * 모델을 업데이트하고 다른 여러 액션을 수행
 
+> 블로그 정리
+>> https://code-space.tistory.com/375
 
+</br>
+
+[Up](#part-1-1-Development)
+
+</br>
+
+    
 <!--
 
 **굵게**
