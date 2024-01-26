@@ -9,7 +9,7 @@
   - [알고리즘]()
 - [Part 2. Language](#part-2-language)
   - [C++]()
-  - [Java]()
+  - [Java](https://github.com/codenee/CS-Study/tree/main/Language/Java)
 - [Part 3. 분야별 정리](#part-3-분야별)
   - [BackEnd]()
   - [Windows](https://github.com/codenee/CS-Study/tree/main/Windows)
@@ -35,7 +35,8 @@
 
 # Part 2. Language
 ## :gem: C++ [Link]()
-## :gem: Java [Link]()
+## :gem: Java [Link](https://github.com/codenee/CS-Study/tree/main/Language/Java)
+- JVM
 
 </br>
 
