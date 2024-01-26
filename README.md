@@ -27,6 +27,7 @@
 ## :bulb: 개발상식 [Link](https://github.com/codenee/CS-Study/tree/main/CS/Development)
 - REST API
 - MVC 패턴
+- 쿠키와 세션
 
 ## :cloud: 운영체제 [Link]()
 
