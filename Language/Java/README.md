@@ -1,7 +1,6 @@
-# Part 2-1 Language
-- [Part 2-1 Language](#part-2-1-Language)
-    - [01. C++](#C++)
-    - [02. Java](#Java)
+# Part 2-2 JAVA
+- [Part 2-2 JAVA](#part-2-2-JAVA)
+    - [02. JVM](#JVM)
 
 </br>
 
