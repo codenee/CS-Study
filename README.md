@@ -24,10 +24,9 @@
 
 # Part 1. 전산 기초
 
-## :bulb: 개발상식 [Link]()
-- RESTFul API 란?
-- MVC 패턴이란 무엇인가?
-- Git 과 GitHub 에 대해서
+## :bulb: 개발상식 [Link](https://github.com/codenee/CS-Study/tree/main/CS/Development)
+- REST API
+- MVC 패턴
 
 ## :cloud: 운영체제 [Link]()
 
