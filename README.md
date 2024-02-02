@@ -28,6 +28,7 @@
 - REST API
 - MVC 패턴
 - 쿠키와 세션
+- 캐시
 
 ## :cloud: 운영체제 [Link]()
 
@@ -37,6 +38,7 @@
 # Part 2. Language
 ## :gem: C++ [Link]()
 ## :gem: Java [Link](https://github.com/codenee/CS-Study/tree/main/Language/Java)
+- 자바의 신
 - JVM
 
 </br>
