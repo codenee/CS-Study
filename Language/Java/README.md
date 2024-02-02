@@ -1,5 +1,6 @@
 # Part 2-2 JAVA
 - [Part 2-2 JAVA](#part-2-2-JAVA)
+    - [01. 자바의 신](https://github.com/codenee/CS-Study/tree/main/Language/Java/GodOfJava3rd)
     - [02. JVM](#JVM)
 
 </br>
