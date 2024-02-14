@@ -67,18 +67,18 @@
 - [자바 개발자 커뮤니티](https://www.surfit.io/explore/develop/java)
   
 ## 기업별
-- [네이버](https://d2.naver.com/home)
-- [라인](https://techblog.lycorp.co.jp/ko)
-- [카카오](https://tech.kakao.com/blog/)
-- [쏘카](https://tech.socarcorp.kr/)
-- [리디](https://ridicorp.com/story-category/tech-blog/)
-- [하이퍼커넥트](https://hyperconnect.github.io/)
-- [NHN](https://meetup.nhncloud.com/)
-- [강남언니](https://blog.gangnamunni.com/blog/tech/)
-- [당근마켓](https://medium.com/daangn)
-- [요기요](https://techblog.yogiyo.co.kr/)
-- [마켓컬리](https://helloworld.kurly.com/)
-- [우아한형제들](https://techblog.woowahan.com/)
+- [네이버](https://d2.naver.com/home){:target="_blank"}
+- [라인](https://techblog.lycorp.co.jp/ko){:target="_blank"}
+- [카카오](https://tech.kakao.com/blog/){:target="_blank"}
+- [쏘카](https://tech.socarcorp.kr/){:target="_blank"}
+- [리디](https://ridicorp.com/story-category/tech-blog/){:target="_blank"}
+- [하이퍼커넥트](https://hyperconnect.github.io/){:target="_blank"}
+- [NHN](https://meetup.nhncloud.com/){:target="_blank"}
+- [강남언니](https://blog.gangnamunni.com/blog/tech/){:target="_blank"}
+- [당근마켓](https://medium.com/daangn){:target="_blank"}
+- [요기요](https://techblog.yogiyo.co.kr/){:target="_blank"}
+- [마켓컬리](https://helloworld.kurly.com/){:target="_blank"}
+- [우아한형제들](https://techblog.woowahan.com/){:target="_blank"}
 
 
 
