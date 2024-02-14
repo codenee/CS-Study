@@ -15,7 +15,7 @@
   - [Windows](https://github.com/codenee/CS-Study/tree/main/Windows)
   - [Security](https://github.com/codenee/CS-Study/tree/main/Security)
   - [Machine Learning]()
-
+- [Part 4. 기업들의 기술 블로그](#part-4-기술-블로그)
 
 </br>
 
@@ -59,6 +59,28 @@
 - 버퍼 오버플로우
   - 스택 버퍼오버플로우
   - 힙 버퍼오버플로우
+
+</br>
+
+# Part 4. 기술 블로그
+## 자바 콘텐츠
+- [자바 개발자 커뮤니티](https://www.surfit.io/explore/develop/java)
+  
+## 기업별
+- [네이버](https://d2.naver.com/home)
+- [라인](https://techblog.lycorp.co.jp/ko)
+- [카카오](https://tech.kakao.com/blog/)
+- [쏘카](https://tech.socarcorp.kr/)
+- [리디](https://ridicorp.com/story-category/tech-blog/)
+- [하이퍼커넥트](https://hyperconnect.github.io/)
+- [NHN](https://meetup.nhncloud.com/)
+- [강남언니](https://blog.gangnamunni.com/blog/tech/)
+- [당근마켓](https://medium.com/daangn)
+- [요기요](https://techblog.yogiyo.co.kr/)
+- [마켓컬리](https://helloworld.kurly.com/)
+- [우아한형제들](https://techblog.woowahan.com/)
+
+
 
 </br>
 
