@@ -1,12 +1,6 @@
 ## :memo: Table of Contents
 - [Part 1. CS](#part-1-전산-기초)
   - [개발상식]()
-  - [자료구조]()
-  - [네트워크]()
-  - [운영체제]()
-  - [데이터베이스]()
-  - [디자인패턴]()
-  - [알고리즘]()
 - [Part 2. Language](#part-2-language)
   - [C++]()
   - [Java](https://github.com/codenee/CS-Study/tree/main/Language/Java)
@@ -21,6 +15,15 @@
 
 </br>
 
+<!--
+  - [개발상식]()
+  - [자료구조]()
+  - [네트워크]()
+  - [운영체제]()
+  - [데이터베이스]()
+  - [디자인패턴]()
+  - [알고리즘]()
+-->
 
 # Part 1. 전산 기초
 
