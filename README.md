@@ -1,6 +1,6 @@
 ## :memo: Table of Contents
 - [Part 1. CS](#part-1-전산-기초)
-  - [개발상식]()
+  - [개발상식](https://github.com/codenee/CS-Study/tree/main/CS/Development)
 - [Part 2. Language](#part-2-language)
   - [C++]()
   - [Java](https://github.com/codenee/CS-Study/tree/main/Language/Java)
