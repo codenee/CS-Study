@@ -2,6 +2,7 @@
 - [Part 2-2 JAVA](#part-2-2-JAVA)
     - [01. 자바의 신](https://github.com/codenee/CS-Study/tree/main/Language/Java/GodOfJava3rd)
     - [02. JVM](#JVM)
+    - [03. Garbage Collection](#Garbage-Collection)
 
 </br>
 
@@ -95,6 +96,122 @@
 >> https://code-space.tistory.com/338
 
 </br>
+
+[Up](#part-2-1-Language) / [back](https://github.com/codenee/CS-Study)
+
+
+</br>
+
+
+# Garbage Collection
+* JVM내에서 메모리 관리를 해주는 것. </br>
+쓰지 않는 객체(힙 메모리 객체가 null)인 경우 가비지 컬렉터의 대상이 된다. </br>
+사용자가 동적으로 생성한 객체가 있는 영역인 Heap메모리에서 동작한다.
+* C++에서는 Heap영역의 메모리를 사용하기 위해 동적 메모리 영역을 할당 받고 해제하는 과정을 개발자가 직접 해야한다 </br>
+  (메모리를 수동으로 직접 관리) </br>
+→ 메모리 영역을 할당 받고 해제하지 않으면 메모리 누수가 발생할 수 있고, 이미 해제한 메모리 영역을 또 해제하면 에러가 발생할 수 있다. </br>
+→ Java에서는 동적 메모리 영역(힙 메모리)를 GC가 관리하여 에러 발생 요인을 방지할 수 있다. </br>
+GC를 수행하게 되면 GC를 수행하는 스레드를 제외한 모든 스레드가 중지된다.</br>
+→ 이것을 stop-the-world라고 한다. </br>
+
+GC 튜닝은 stop-the-world시간을 줄이는 것을 의미한다. </br>
+GC가 자주 호출되면 그 만큼 stop the world가 자주 발생하여 사용자 입장에서 느껴질 정도로 애플리케이션 동작이 지연될 수 있다.
+
+Java플랫폼에서는 4가지의 가비지 컬렌션이 지원되는데, Serial GC( 직렬 GC)를 제외하고는 병렬화하여 성능을 향상시킨다.
+
+가비지 컬렉션을 수행하는 오버헤드를 가능한 낮게 유지하는 것이 매우 중요한다.</br>
+→ 소규모 시스템에서는 문제가 되지 않을 수 있지만, 대규모 시스템에서는 병목 현상이 발생할 수 있다.
+
+## JVM Generations
+모든 객체가 쓰레기인지 검사하는 방식의 가비지 컬렉션은 규모가 큰 프로그램에서 심각한 문제가 생길 수 있다. </br>
+→ 따라서 매번 전체를 검사하지 않고 일부만 검사할 수 있도록 Generational한 구조를 고안해 냈다.</br>
+* young generation </br>
+객체가 생성되면 이 영역에 위치한다. </br>
+이곳이 가득차면 minor gc가 발생한다. </br>
+minor gc가 발생하면 살아있는 객체들만 체크하고 나머지는 다 없애버린다. </br>
+null객체는 매우 빠르게 수거 된다. → 살아남은 객체들 중 더 오래 쓸 것 같은 일부 객체는 Old Generation(Tenured)으로 이동합니다. </br>
+* Old Generation(tenured) </br>
+이곳이 가득 차면 major gc가 발생한다. </br>
+major gc는 minor gc보다 더 오래 걸린다. </br>
+Young Generation는 임계값이 설정되어 있으며, 해당 임계값에 도달하면 오브젝트(객체)는 Old Generation으로 이동한다. </br>
+major gc는 모든 라이브러리 객체를 포함하기 때문에 속도가 훨씬 느려진다.major gc를 위한 stop the world event 기간(수행 시간)은 Old Generation에 사용되는 GC종류에 영향을 받는다. </br>
+따라서 major gc를 최소화해야 한다. </br>
+* Permanet Generation </br>
+애플리케이션에서 사용되는 클래스 및 메서드를 설명하는데 필요한 메타데이터가 포함되어 있다. </br>
+애플리케이션에서 사용 중인 클래스를 기반으로 런타임에 JVM에 의해 채워진다. Java SE라이브러리 클래스 및 메서드가 여기 저장된다. </br>
+perm영역이 현재 meta space로 변경되었다. </br>
+* Metaspace </br>
+Java8이 나오면서 JVM영역이 변경되었다. </br>
+Permanent Generation메모리 영역이 없어지고 Metaspace영역이 생김. </br>
+
+* Stop the World Event </br>
+모든 minor gc, major gc는 stop the world 이벤트를 가진다. </br>
+GC를 수행하게 되면 GC를 수행하는 스레드를 제외한 모든 스레드가 중지된다 </br>
+→ 이것을 stop-the-world라고 한다. </br>
+
+### PermGen vs Metaspace
+
+Java 7 HotSpot JVM
+```
+<----- Java Heap ----->             <--- Native Memory --->
++------+----+----+-----+-----------+--------+--------------+
+| Eden | S0 | S1 | Old | Permanent | C Heap | Thread Stack |
++------+----+----+-----+-----------+--------+--------------+
+                        <--------->
+                       Permanent Heap
+S0: Survivor 0
+S1: Survivor 1
+```
+
+Java 8
+```
+<----- Java Heap -----> <--------- Native Memory --------->
++------+----+----+-----+-----------+--------+--------------+
+| Eden | S0 | S1 | Old | Metaspace | C Heap | Thread Stack |
++------+----+----+-----+-----------+--------+--------------+
+```
+
+* Permanent Generation </br>
+ Class혹은 Method Code가 저장되는 영역 </br>
+ Heap영역에 속함 </br>
+ Default로 제한된 크기를 가짐 </br>
+ 
+| JVM| Default Permgen size(MB) | Default maximum Mataspace size|
+|---|---|---|
+|32-bit client JVM	|64	|unlimited|
+|32-bit server JVM	|64	|unlimited|
+|64-bit JVM	|82	|unlimited|
+
+JVM Argument </br>
+-XX:permSize=N (PermGen Default size설정)    
+-XX:MaxPermSize=N (PermGen Max Size설정)
+
+- Metaspace </br>
+java의 ClassLoader가 현재까지 로드한 Class들의 Metadata가 저장되는 공간 </br>
+Native메모리 영역(Heap아님!!, 시스템의 기본 메모리) </br>
+Default로 제한된 크기를 가지고 있지 않기에 필요한 만큼 계속 늘어난다! </br>
+Java8부터는 PermGen관련 JVM옵션 무시 </br>
+JVM Argument  </br>
+ -XX:MetaspaceSize=N (Metaspace Default size설정)  </br>
+ -XX:MaxMetaspaceSize=N (Metaspace Max Size설정)  </br>
+> Native Memory
+> = Off-Heap, Non-Heap, Direct Memory
+
+- 왜 Perm이 사라지고 Metaspace가 추가됬을까? </br>
+Metaspace영역은 JVM에 의해 관리되는 Heap이 아닌 OS레벨에서 관리되는 Native메모리 영역이다. </br>
+그러므로 Metaspace가 Native메모리를 이용함으로써 개발자는 영역 확보의 상한을 크게 신경쓸 필요가 없어짐 </br>
+    - OOME </br>
+Java애플리케이션은 크게 Heap과 Off-Heap 두 공간을 활용하여 동작한다.  </br>   
+따라서, 애플리케이션을 배포할 때 메모리 몇GB를 할당해야 하는지 결정하기 위해서 Xmx값만 생각하면 OOME에 빠지기 쉽다. </br>
+Xmx에 MaxMetaspace값을 더하고, 추가로 프로그램에서 NIO를 사용해 Native Memory를 직접 할당 받는 로직을 고려해서 Heap+Native Memory사용 총량으로 할당해야 비교적 정확하다. </br>    
+특히 컨테이너의 경우 계산을 좀 더 정확하게 해야 시스템에서 OOM Killed되는 상활을 면할 수 있다.  </br>
+최근에는 이 Off-Heap을 이용해 성능 향상을 하고 있는 애플리케이션들이 많다. </br>
+> Netty, Spark, Cassandra, lgnite 등 이름만 들으면 알만한 여러 애플리케이션들과 이를 사용하는 파생된 수많은 프로젝트가 여기에 포함된다.
+
+> 참고
+>> https://m.post.naver.com/viewer/postView.nhn?volumeNo=23726161&memberNo=36733075
+>> https://code-space.tistory.com/389
+
 
 [Up](#part-2-1-Language) / [back](https://github.com/codenee/CS-Study)
 
