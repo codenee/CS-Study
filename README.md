@@ -32,23 +32,28 @@
 - MVC 패턴
 - 쿠키와 세션
 - 캐시
+- 컴퓨터 구성 요소
 
+<!--
 ## :cloud: 운영체제 [Link]()
+-->
 
 </br>
 
 
 # Part 2. Language
-## :gem: C++ [Link]()
-## :gem: Java [Link](https://github.com/codenee/CS-Study/tree/main/Language/Java)
+
+## :writing_hand: C++ [Link]()
+## :writing_hand: Java [Link](https://github.com/codenee/CS-Study/tree/main/Language/Java)
 - 자바의 신
 - JVM
+- Garbage Collection
 
 </br>
 
 # Part 3. 분야별
 
-## :zap: Back-End [Link]()
+## :zap: Spring [Link]()
 ## :zap: Windows [Link](https://github.com/codenee/CS-Study/tree/main/Windows)
 - Windows Kernel
 - 계정과 권한
