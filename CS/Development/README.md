@@ -271,7 +271,7 @@ RAM을 업그레이드하면 CPU가 계산에 필요한 데이터를 얻는 속�
 
 ### 4.HDD
 Hard Disk Drive </br>
-<img src="./img/HDD.jpg" width="300px" height="300px" title="HDD"></img>
+<img src="./img/HDD.JPG" width="300px" height="300px" title="HDD"></img>
 
 하드디스크는 비휘발성, 순차 접근이 가능한 컴퓨터의 보조 기억장치이다. </br>
 HDD는 정보를 저장하는 플래터와 정보를 찾는 헤드로 구성되어 있다. </br>
