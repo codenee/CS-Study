@@ -3,6 +3,7 @@
     - [01. 자바의 신](https://github.com/codenee/CS-Study/tree/main/Language/Java/GodOfJava3rd)
     - [02. JVM](#JVM)
     - [03. Garbage Collection](#Garbage-Collection)
+    - [04. String Class](#String-Class)
 
 </br>
 
@@ -211,6 +212,87 @@ Xmx에 MaxMetaspace값을 더하고, 추가로 프로그램에서 NIO를 사용�
 > 참고
 >> https://m.post.naver.com/viewer/postView.nhn?volumeNo=23726161&memberNo=36733075
 >> https://code-space.tistory.com/389
+
+
+[Up](#part-2-1-Language) / [back](https://github.com/codenee/CS-Study)
+
+
+</br>
+
+# String Class
+```
+public final class String extends Object implements Serializable, Comparable<String>, CharSequence
+```
+String 클래스는 final로 선언되어 있다. </br>
+String 클래스는 자식 클래스를 양산할 수 없다.  </br>
+모든 클래스는 자식 클래스를 양산할 수 없다.  </br>
+- Serializable 인터페이스
+  구현해야 하는 메소드가 하나도 없는 특이한 인터페이스
+- Comparable 인터페이스
+  compareTo()메소드 하나만 선언되어 있다.
+- CharSequence 인터페이스
+  문자열을 다루기 위한 클래스
+  - StringBuilder, StringBuffer 클래스도 CharSequence인터페이스를 구현해 놓았다.
+## 1.불변한 객체
+String은 immutable한 객체이다. 한 번 만들어지면 그 값을 변경할 수 없다(불변)
+```
+String str = "Hello";
+str += "World"
+```
+위의 코드로 보면 불변이 아닌 변하는 객체같다. </br>
+하지만 아니다. 불변한 객체이다. </br>
+String문자열을 더하면 새로운 String객체가 생성되고, 기존 객체는 버려진다. </br>
+하나는 String을 만들어 계속 더하기 작업을 하면 계속 쓰레기를 만들게 된다. </br>
+쓰레기는 널 객체이고, 널 객체는 GC의 대상이다. </br>
+ </br>
+이러한 String의 단점을 보완하기 위해서 StringBuffer와 StringBuilder가 나왔다.  </br>
+문자열을 더하더라도 새로운 객체를 생성하지 않는다.  </br>
+이 클래스 타입은 append() 메소드로 더하기 작업을 한다.  </br>
+  </br>
+StringBuffer, StringBuilder는 CharSequence인터페이스를 구현했다. </br>
+그래서 하나의 클래스를 사용하여 매개 변수로 받는 작업을 할 때는 String, StringBuilder타입보다 `CharSequence`타입으로 받는 것이 좋다.
+- StringBuffer
+  Thread safe하다. </br>
+  클래스에 문자열 처리를 위한 인스턴스 변수가 선언되었고, 여러 쓰레드에서 이 변수를 동시에 접근하는 일이 있을 경우에는 반드시 String Buffer를 사용해야 만 한다.
+- StringBuilder
+  Thread safe하지 않다. </br>
+  하나의 메소드 내에서 문자열을 생성하여 더할 경우에는 StringBuilder를 사용해도 상관없다.
+
+> Thread safe </br> 해당 객체를 사용할 때 다른 스레드에 의해 값이 변경되지 않는 것을 보장하는 상태
+
+## 2. + , concat()
+JDK 7,8 버전부터 동작하는 방식이 달라진다. </br>
++ 연산을 하게 되면 StringBuilder로 바꿔주는 역할이 생겼다.</br>
+String으로 연산하게 되면 객체를 계속 생성하고 버려지게 되어 GC가 많이 발생하게 된다. </br>
+하지만 StringBuilder로 바뀌게 되면서 GC의 영향을 덜 받게 된다.</br>
+Git컴파일러가 + 연산이 반복되는 것을 최적화하여 StringBuilder로 바꾼다. </br>
+
+## 3.String literal
+String클래스는 다른 클래스들과 다른 특성이 있다. </br>
+```
+String str1 = new String("heap");
+String str2 = "heap";
+String str3 = "heap";
+```
+str1은 new를 이용해 문자열을 생성하면 heap영역의 새로운 주소를 할당된다. </br>
+str2는 문자열 리터럴로 생성하는 방식으로 `heap`영역안에 있는 `String Constant Pool`이라는 영역에 할당된다.  </br>
+str1과 str2는 같은 값을 가지고 있지만 다른 주소 값을 가진다. </br>
+str2와 str3는 같은 값을 가지고 있어, 같은 주소 값을 참조하게 된다. </br>
+( 문자열이 담기는 상수풀의 위치는 자바8부터 HEAP영역으로 옮겨졌다. )</br>
+
+str1도 상수풀에 있는 같은 값을 가지는 주소로 참조하게 할 수 있다.   </br>
+intern()메소드가 있다. String Constant pool은 해당 문자열이 있는지 검증하고 없으면 상수 풀에 저장한 후 레퍼런스를 전달하고, 값이 있으면 기존 상수풀에 있는 참조 값을 넘겨준다. </br>
+하지만 이 메소드는 사용하지 않아야 한다. </br>
+Why? </br>
+intern()메소드를 계속 사용하게 되면 상수풀 메모리가 꽉 차게 된다. 
+
+
+## 4. ==, equals()
+String클래스도 == 비교가 아닌 equals()메소드를 사용해서 해야만 한다. </br>
+ == 은 주소 값을 비교하고, equals()메소드는 저장한 값을 비교한다. </br>
+equals()를 제대로 사용하려면 오버라이딩해야 한다. </br>
+
+
 
 
 [Up](#part-2-1-Language) / [back](https://github.com/codenee/CS-Study)
