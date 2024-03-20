@@ -1,6 +1,7 @@
 ## :memo: Table of Contents
 - [Part 1. CS](#part-1-전산-기초)
   - [개발상식](https://github.com/codenee/CS-Study/tree/main/CS/Development)
+  - [디자인패턴](https://github.com/codenee/CS-Study/tree/feature/48/DesignPattern)
 - [Part 2. Language](#part-2-language)
   - [C++]()
   - [Java](https://github.com/codenee/CS-Study/tree/main/Language/Java)
@@ -27,13 +28,16 @@
 
 # Part 1. 전산 기초
 
-## :bulb: 개발상식 [Link](https://github.com/codenee/CS-Study/tree/main/CS/Development)
+## 개발상식 [Link](https://github.com/codenee/CS-Study/tree/main/CS/Development)
 - REST API
 - MVC 패턴
 - 쿠키와 세션
 - 캐시
 - 컴퓨터 구성 요소
 - 해시충돌
+
+
+## 디자인패턴 [Link](https://github.com/codenee/CS-Study/tree/feature/48/DesignPattern)
 
 <!--
 ## :cloud: 운영체제 [Link]()
@@ -44,8 +48,8 @@
 
 # Part 2. Language
 
-## :writing_hand: C++ [Link]()
-## :writing_hand: Java [Link](https://github.com/codenee/CS-Study/tree/main/Language/Java)
+## C++ [Link]()
+## Java [Link](https://github.com/codenee/CS-Study/tree/main/Language/Java)
 - 자바의 신
 - JVM
 - Garbage Collection
@@ -54,12 +58,12 @@
 
 # Part 3. 분야별
 
-## :zap: Spring [Link]()
-## :zap: Windows [Link](https://github.com/codenee/CS-Study/tree/main/Windows)
+## Spring [Link]()
+## Windows [Link](https://github.com/codenee/CS-Study/tree/main/Windows)
 - Windows Kernel
 - 계정과 권한
 - PE 포맷
-## :zap: Security [Link](https://github.com/codenee/CS-Study/tree/main/Security)
+## Security [Link](https://github.com/codenee/CS-Study/tree/main/Security)
 - 암호학
   - 대칭키 공개키
   - HTTPS 동작 과정
