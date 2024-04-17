@@ -1,11 +1,11 @@
-# Part 4-1 Spring
-- [Part 4-1 Spring](#part-4-1-Spring)
+# Part 3-1 Spring
+- [Part 3-1 Spring](#part-3-1-Spring)
   - [토비의 스프링1](#토비의-스프링1)
     - [디자인 패턴](#디자인-패턴)
     - [1장 오브젝트와 의존관계](#1장-오브젝트와-의존관계)
 
 
-[Up](#part-4-1-Spring) / [back](https://github.com/codenee/CS-Study)
+[Up](#part-3-1-Spring) / [back](https://github.com/codenee/CS-Study)
 
 </br>
 
