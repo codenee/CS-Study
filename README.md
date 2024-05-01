@@ -99,4 +99,5 @@
 
 ## 참고 자료
 - [tech-interview-for-developer](https://github.com/gyoogle/tech-interview-for-developer)
+- [tech-refrigerator](https://github.com/GimunLee/tech-refrigerator)
 - [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/main)
