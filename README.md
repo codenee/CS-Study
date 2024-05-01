@@ -98,4 +98,5 @@
 </br>
 
 ## 참고 자료
+- [tech-interview-for-developer](https://github.com/MangKyu/tech-interview-for-developer?tab=readme-ov-file)
 - [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/main)
