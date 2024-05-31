@@ -81,6 +81,8 @@
 - [자바 개발자 커뮤니티](https://www.surfit.io/explore/develop/java)
   
 ## 기업별
+<a href="https://toss.tech/tech" target="_blank"> 토스 </a></br>
+<a href="https://docs.tosspayments.com/resources/glossary/index" target="_blank"> 토스 페이먼츠</a></br>
 <a href="https://d2.naver.com/home" target="_blank"> 네이버 </a> </br>
 <a href="https://techblog.lycorp.co.jp/ko" target="_blank"> 라인 </a> </br>
 <a href="https://tech.kakao.com/blog/" target="_blank"> 카카오 </a></br>
